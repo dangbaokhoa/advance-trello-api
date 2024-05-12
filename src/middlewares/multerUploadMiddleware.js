@@ -6,7 +6,6 @@ import { LIMIT_COMMON_FILE_SIZE, ALLOW_COMMON_FILE_TYPES } from '~/utils/validat
 
 
 // Function Kiểm tra loại file nào được chấp nhận
-
 const customFileFilter = (req, file, callback) => {
   console.log('Multer File: ', file)
 
@@ -21,7 +20,6 @@ const customFileFilter = (req, file, callback) => {
 }
 
 // Khởi tạo function upload được bọc bởi thằng multer
-
 const upload = multer({
   limits: { fileSize: LIMIT_COMMON_FILE_SIZE },
   fileFilter: customFileFilter
