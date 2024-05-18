@@ -4,12 +4,11 @@ import { LIMIT_COMMON_FILE_SIZE, ALLOW_COMMON_FILE_TYPES } from '~/utils/validat
 * https://www.npmjs.com/package/multer
 */
 
-
 // Function Kiểm tra loại file nào được chấp nhận
 const customFileFilter = (req, file, callback) => {
   console.log('Multer File: ', file)
 
-  // Đối với thằng multer, kiểm tra kiểu file thì sử dụng mimetype
+  // Đối với thằng multer, kiểm tra kiểu file (file type) thì sử dụng mimetype
   if (!ALLOW_COMMON_FILE_TYPES.includes(file.mimetype)) {
     const errMessage = 'File type is invalid. Only accept jpg, jpeg and png'
     return callback(errMessage, null)

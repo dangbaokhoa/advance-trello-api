@@ -161,6 +161,7 @@ const update = async (userId, reqBody, userAvaterFile) => {
         avatar: uploadResult.secure_url
       })
     } else {
+
       // Trường hợp update các thông tin chung, ví dụ như displayName
       updatedUser = await userModel.update(existUser._id, reqBody)
     }
